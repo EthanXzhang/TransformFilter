@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+g:\my projects\vs2017\transformfilter_master_new\transformfilter\stdafx.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+g:\my projects\vs2017\transformfilter_master_new\transformfilter\stdafx.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+g:\my projects\vs2017\transformfilter_master_new\transformfilter\targetver.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+g:\coding\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\atlmfc\include\afx.h(24): fatal error C1189: #error:  Building MFC application with /MD[d] (CRT dll version) requires MFC shared dll version. Please #define _AFXDLL or do not use /MD[d]
