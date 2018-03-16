@@ -591,7 +591,6 @@ int TransformFilter::cal_outputsize()
 		{
 			transform_setting->output_w = s->cube_edge_length * 3;
 			transform_setting->output_h = s->cube_edge_length * 2;
-
 		}
 		/*
 		计算纵列格式cubemap长宽
@@ -601,10 +600,35 @@ int TransformFilter::cal_outputsize()
 			transform_setting->output_w = s->cube_edge_length * 2;
 			transform_setting->output_h = s->cube_edge_length * 3;
 		}
+		else if (s->input_layout == LAYOUT_EQUIRECT && s->output_layout == LAYOUT_BARREL)
+		{
+			transform_setting->output_w = s->cube_edge_length * 4;
+			transform_setting->output_h = s->cube_edge_length * 2;
+		}
+		else if (s->input_layout == LAYOUT_EQUIRECT && s->output_layout == LAYOUT_EAC_32)
+		{
+			transform_setting->output_w = s->cube_edge_length * 3;
+			transform_setting->output_h = s->cube_edge_length * 2;
+		}
 		else if (s->input_layout == LAYOUT_CUBEMAP_32&&s->output_layout == LAYOUT_EQUIRECT)
 		{
 			transform_setting->output_h = transform_setting->input_h;
 			transform_setting->output_w = (transform_setting->input_w / 3) * 4;
+		}
+		else if (s->input_layout == LAYOUT_EAC_32 && s->output_layout == LAYOUT_EQUIRECT)
+		{
+			transform_setting->output_h = transform_setting->input_h;
+			transform_setting->output_w = (transform_setting->input_w / 3) * 4;
+		}
+		else if (s->input_layout == LAYOUT_BARREL && s->output_layout == LAYOUT_EQUIRECT)
+		{
+			transform_setting->output_h = transform_setting->input_h;
+			transform_setting->output_w = transform_setting->input_w;
+		}
+		else if (s->input_layout == LAYOUT_CUBEMAP_23_OFFCENTER && s->output_layout == LAYOUT_EQUIRECT)
+		{
+			transform_setting->output_h = (transform_setting->input_h/3)*4;
+			transform_setting->output_w = transform_setting->input_w;
 		}
 	}
 
